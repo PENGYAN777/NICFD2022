@@ -4,7 +4,7 @@
 ########### SLURM CONFIGURATION ############
 
 # Name of the job
-#SBATCH --job-name=5_pass
+#SBATCH --job-name=vw_trova
 #SBATCH --output=slurm-%j.out
 #SBATCH --no-requeue
 
@@ -105,7 +105,7 @@ sed -i 's/^\s*ITER=.*$/ITER= 10000/' su2.cfg
 sed -i 's/^\s*MUSCL_FLOW=.*$/MUSCL_FLOW= YES/' su2.cfg
 sed -i 's/^\s*SOLUTION_FILENAME=.*$/SOLUTION_FILENAME= 'solution_interpolated.dat'/' su2.cfg
 #sed -i 's/^\s*FREESTREAM_PRESSURE=.*$/FREESTREAM_PRESSURE=1.125e6/' su2.cfg
-sed -i 's/^\s*MARKER_RIEMANN=.*$/MARKER_RIEMANN= ( 1, TOTAL_CONDITIONS_PT, 1.7e6, 525.9, 1.0, 0.0, 0.0, 5, TOTAL_CONDITIONS_PT, 3.2e5, 300, 1.0, 0.0, 0.0  )/' su2.cfg
+sed -i 's/^\s*MARKER_RIEMANN=.*$/MARKER_RIEMANN= ( 1, TOTAL_CONDITIONS_PT, 1.7e6, 525.9, 1.0, 0.0, 0.0, 5, TOTAL_CONDITIONS_PT, 1.2e5, 300, 1.0, 0.0, 0.0 )/' su2.cfg
 
 cp solution.dat solution_interpolated.dat
 
